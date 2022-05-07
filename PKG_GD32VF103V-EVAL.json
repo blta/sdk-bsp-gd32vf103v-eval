@@ -1,0 +1,130 @@
+{
+    "chip": {
+        "tx_name": "PA9",
+        "chip_name": "CH32V103VBT6",
+        "source_freq": "8000000",
+        "uart_name": "USART0",
+        "clock_source": "HSE",
+        "series_name": "CH32VF",
+        "sub_series_name": "CH32VF103V",
+        "device_vendor": "GigaDevice",
+        "family_name": "GD32V",
+        "rx_name": "PA10",
+        "target_freq": "1080000000"
+    },
+    "features_zh": [
+        "用户LED指示灯",
+        "按钮",
+        "2个USART",
+        "1个连接到ADC输入的POT",
+        "2Kb EEPROM",
+        "16Mbit SPI NOR闪存",
+        "耳机接口",
+        "2个CAN",
+        "USB",
+        "3.2英寸TFT-LCD",
+        "板载GD-Link编程器，J -Link JTAG连接器"
+    ],
+    "yaml_version": 3,
+    "pkg_version": "1.0.0",
+    "example_projects": [],
+    "board_repo_url": "",
+    "features": [
+        "User LEDS",
+        "Buttons",
+        "2 USARTs",
+        "one group port for ADC",
+        "2Kb EEPROM",
+        "16Mbit SPI NOR Flash",
+        "one Microphone",
+        "2 CANs",
+        "one Full speed USB",
+        "3.2 in TFT-LCD",
+        "Onboard GD-Link programmer,J-Link JTAG connector"
+    ],
+    "docs": [
+        {
+            "file": "E:\\Gitea\\sdk-bsp-gd32vf103v-eval/documents/GD32VF103V-EVAL评估板用户指南_V1.1.pdf",
+            "category": "manual",
+            "title": "GD32VF103V-EVAL评估板用户指南_V1.1"
+        },
+        {
+            "file": "E:\\Gitea\\sdk-bsp-gd32vf103v-eval/documents/GD32VF103V_EVAL_Schematic_V1.0.pdf",
+            "category": "other",
+            "title": "GD32VF103V_EVAL_Schematic_V1.0"
+        },
+        {
+            "file": "E:\\Gitea\\sdk-bsp-gd32vf103v-eval/documents/Bumblebee处理器内核指令架构手册.pdf",
+            "category": "other",
+            "title": "Bumblebee处理器内核指令架构手册"
+        },
+        {
+            "file": "E:\\Gitea\\sdk-bsp-gd32vf103v-eval/documents/GD32VF103_User_Manual_CN_V1.2.pdf",
+            "category": "manual",
+            "title": "GD32VF103_User_Manual_CN_V1.2"
+        }
+    ],
+    "template_projects": [
+        {
+            "project_name": "gd32vf103v-eval-demo",
+            "project_description": "gd32vf103v-eval demo project",
+            "project_type": "rt-thread|@full|@4.0.2",
+            "project_path": "E:/Gitea/sdk-bsp-gd32vf103f-eval/GD32VF103v-EVAL",
+            "is_remove_rtt_source_in_project": "false"
+        }
+    ],
+    "yamlFolderPath": "E:\\Gitea\\sdk-bsp-gd32vf103v-eval",
+    "default_projects": [
+        {
+            "project_type": "rt-thread|@full|@4.1.0",
+            "builtin_files": [
+                {
+                    "$ref": "$.template\\_projects[0].builtin\\_files[0]"
+                }
+            ],
+            "project_description": "Demo project",
+            "external_files": [
+                {
+                    "source_path_offset": "",
+                    "package_version": "2022.05",
+                    "files_and_folders": [],
+                    "package_name": "RISC-V-GCC-NUCLEI",
+                    "package_vendor": "NUCLEI",
+                    "target_path_offset": "",
+                    "package_type": "ToolChain_Support_Packages"
+                },
+                {
+                    "source_path_offset": "",
+                    "package_version": "2022.05",
+                    "files_and_folders": [],
+                    "package_name": "OpenOCD-Nuclei",
+                    "package_vendor": "NuClei",
+                    "target_path_offset": "",
+                    "package_type": "Debugger_Support_Packages"
+                }
+            ],
+            "project_name": "GD32VF103V-EVAL-Demo"
+        }
+    ],
+    "pkg_vendor": "Blta",
+    "board": {
+        "emulator_machine": "",
+        "debug_interface": "SWD",
+        "small_image": "E:\\Gitea\\sdk-bsp-gd32vf103v-eval/documents/images/2022-05-07_201746.bmp",
+        "debugger": "GD-LINK",
+        "description_en": "GD32VF103VBT6 MCU development kit",
+        "sale_contact_cn": "https://www.gigadevice.com/zh-hans/support/contact/",
+        "buy_url_global": "https://detail.tmall.com/item.htm?spm=a230r.1.14.6.2c4745838W9ToH&id=601461418296&ns=1&abbucket=5",
+        "price_global": "70 USD",
+        "version": "1.0",
+        "sale_contact_global": "https://www.gigadevice.com/support/contact/",
+        "buy_url_cn": "https://detail.tmall.com/item.htm?spm=a230r.1.14.6.2c4745838W9ToH&id=601461418296&ns=1&abbucket=5",
+        "vendor": "GigaDevice",
+        "name": "GD32VF103V-EVAL",
+        "price_cn": "499 CNY",
+        "large_image": "E:\\Gitea\\sdk-bsp-gd32vf103v-eval/documents/images/2022-05-07_201744.bmp",
+        "description_zh": "GD32VF103VBT6 MCU 评估版"
+    },
+    "pkg_type": "Board_Support_Packages",
+    "board_support_package_location": "E:/Gitea/sdk-bsp-gd32vf103v-eval"
+}

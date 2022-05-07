@@ -16,15 +16,15 @@ board:
   vendor: GigaDevice
   version: '1.0'
 chip:
-  chip_name: CH32V103VBT6
+  chip_name: GD32V103VBT6
   clock_source: HSE
   device_vendor: GigaDevice
   family_name: GD32V
   rx_name: PA10
-  series_name: CH32VF
+  series_name: GD32VF
   source_freq: '8000000'
-  sub_series_name: CH32VF103V
-  target_freq: '240000000'
+  sub_series_name: GD32VF103V
+  target_freq: '1080000000'
   tx_name: PA9
   uart_name: USART0
 docs:
