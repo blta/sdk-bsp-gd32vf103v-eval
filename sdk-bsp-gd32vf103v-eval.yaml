@@ -1,0 +1,100 @@
+board:
+  buy_url_cn: https://detail.tmall.com/item.htm?spm=a230r.1.14.6.2c4745838W9ToH&id=601461418296&ns=1&abbucket=5
+  buy_url_global: https://detail.tmall.com/item.htm?spm=a230r.1.14.6.2c4745838W9ToH&id=601461418296&ns=1&abbucket=5
+  debug_interface: SWD
+  debugger: WCH-LINK
+  description_en: GD32VF103VBT6 MCU development kit
+  description_zh: GD32VF103VBT6 MCU 评估版
+  emulator_machine: ''
+  large_image: documents/images/2022-05-07_201744.bmp
+  name: GD32VF103V-EVAL
+  price_cn: 499 CNY
+  price_global: 100 USD
+  sale_contact_cn: https://www.gigadevice.com/zh-hans/support/contact/
+  sale_contact_global: https://www.gigadevice.com/support/contact/
+  small_image: documents/images/2022-05-07_201746.bmp
+  vendor: GigaDevice
+  version: '1.0'
+chip:
+  chip_name: CH32V103VBT6
+  clock_source: HSE
+  device_vendor: GigaDevice
+  family_name: GD32V
+  rx_name: PA10
+  series_name: CH32VF
+  source_freq: '8000000'
+  sub_series_name: CH32VF103V
+  target_freq: '240000000'
+  tx_name: PA9
+  uart_name: UART1
+docs:
+- category: manual
+  file: documents/GD32VF103V-EVAL评估板用户指南_V1.1.pdf
+  title: GD32VF103V-EVAL评估板用户指南_V1.1
+- category: other
+  file: documents/GD32VF103V_EVAL_Schematic_V1.0.pdf
+  title: GD32VF103V_EVAL_Schematic_V1.0
+- category: other
+  file: documents/Bumblebee处理器内核指令架构手册.pdf
+  title: Bumblebee处理器内核指令架构手册
+- category: manual
+  file: documents/GD32VF103_User_Manual_CN_V1.2.pdf
+  title: GD32VF103_User_Manual_CN_V1.2
+example_projects: []
+features:
+- User LEDS
+- Buttons
+- 2 USARTs
+- one group port for ADC
+- 2Kb EEPROM
+- 16Mbit SPI NOR Flash
+- one Microphone
+- 2 CANs
+- one Full speed USB
+- 3.2 in TFT-LCD
+- Onboard GD-Link programmer,J-Link JTAG connector
+features_zh:
+- 用户LED指示灯
+- 按钮
+- 2个USART
+- 1个连接到ADC输入的POT
+- 2Kb EEPROM
+- 16Mbit SPI NOR闪存
+- 耳机接口
+- 2个CAN
+- USB
+- 3.2英寸TFT-LCD
+- 板载GD-Link编程器，J -Link JTAG连接器
+pkg_type: Board_Support_Packages
+pkg_vendor: Blta
+pkg_version: 1.0.0
+template_projects:
+- builtin_files:
+  - files_and_folders:
+    - .config
+    - .cproject
+    - .gitignore
+    - .project
+    - .settings
+    - applications
+    - board
+    - cconfig.h
+    - drivers
+    - figures
+    - Kconfig
+    - libraries
+    - openocd_gd32vf103.cfg
+    - packages
+    - README.md
+    - rt-thread
+    - rtconfig.h
+    - rtconfig.py
+    - SConscript
+    - SConstruct
+    source_path_offset: project_0
+    target_path_offset: ''
+  external_files: []
+  project_description: Demo project
+  project_name: GD32VF103V-EVAL-Demo
+  project_type: rt-thread|@full|@4.0.2
+yaml_version: 3
