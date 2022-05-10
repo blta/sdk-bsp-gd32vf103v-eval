@@ -38,3 +38,4 @@ RTE/
 *.targets
 /GD32VF103xB/
 build/
+!makefile.targets
