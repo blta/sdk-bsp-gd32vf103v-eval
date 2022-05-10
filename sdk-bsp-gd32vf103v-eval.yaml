@@ -83,6 +83,7 @@ template_projects:
     - figures
     - Kconfig
     - libraries
+    - makefile.targets
     - openocd_gd32vf103.cfg
     - packages
     - README.md
