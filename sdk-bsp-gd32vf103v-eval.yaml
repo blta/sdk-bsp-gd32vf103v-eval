@@ -2,7 +2,7 @@ board:
   buy_url_cn: https://detail.tmall.com/item.htm?spm=a230r.1.14.6.2c4745838W9ToH&id=601461418296&ns=1&abbucket=5
   buy_url_global: https://detail.tmall.com/item.htm?spm=a230r.1.14.6.2c4745838W9ToH&id=601461418296&ns=1&abbucket=5
   debug_interface: SWD
-  debugger: GD-LINK
+  debugger: FT2232
   description_en: GD32VF103VBT6 MCU development kit
   description_zh: GD32VF103VBT6 MCU 评估版
   emulator_machine: ''
