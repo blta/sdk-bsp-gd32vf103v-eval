@@ -14,96 +14,80 @@ gd32vf103v-eval 是由兆易创新公司推出的基于开源指令集 RISC-V �
 
 ## 编译说明
 
-### 导入工程
-打开 Eclipse 选择工作空间
-
-![指定工作空间](figures/open_eclipse.png)
-
-打开 Eclipse 后需要导入 RT-Thread 工程
-
-![导入工程](figures/file.png)
-
-选择以存在的工程，并指定工程路径
-
-![选择存在工程](figures/exist.png)
-
-指定工程路径
-
-![指定工程路径](figures/finish_port.png)
+### 基于SDK新建工程
+![image-20220510172522364](figures/image-20220510172522364.png)
 
 
-### 添加环境变量
-设置 Build Tools Path
 
-![build_path](figures/build_path.png)
+### 安装芯来GCC和OpenOCD
 
-点击 MCU 列表中的 Build Tools Path 选项，为其选择 SDK 文件包中提供的对应工具
+未安装对应工具链，首次编译会报错
 
-设置 OpenOCD Path
+![image-20220510172548012](figures/image-20220510172548012.png)
 
-![open_ocd](figures/open_ocd.png)
 
-点击 MCU 列表中的 OpenOCD Path 选项，为其选择 SDK 文件包中提供的对应工具。
 
-设置 RISC-V Toolchains Path
+在SDK Manger里安装最新的`RISC-V-GCC-NUCLEI` 和 `OpenOCD-Nuclei`两个软件包
 
-![risc-v](figures/risc-v-tool.png)
+![image-20220510172819379](figures/image-20220510172819379.png)
 
-点击 MCU 列表中的 RISC-V Toolchains Paths 选项，为其选择 SDK 文件包中提供的对应工具。
+再次编译，正常
 
-按照以上步骤设置好路径点击编译即可编译工程
+![image-20220510180115120](figures/image-20220510180115120.png)
 
-![build](figures/build_project.png)
 
-## 烧写及执行
 
-### 替换驱动
+## 下载和调试
 
-1.  执行 JLink_Windows_V622c.exe (可以是任意版本)安装 JLink 驱动程序。
-2.  执行 Zadig.exe，点击 Options->List All Devices。
-3.  在下图 1 处选择 J-Link，2 处选择 WinUSB， 之后点击 3 处 Replace Driver 进行驱动替换。
+### GD-LINK
 
-![zadig](figures/zadig.png)
+gd32vf103v-eval板载GD-LINK和 外部Jlink接口，此处使用板载GD-LINK进行下载和调试
 
-安装完成之后会弹出如下窗口：
+<img src="figures/image-20220510180625488.png" alt="image-20220510180625488" style="zoom:50%;" />
 
-![close](figures/close.png)
 
-### 配置 GDB 调试
 
-在菜单栏中，点击 Run->Debug Configurations，进入 Debug 配置界面，如下图所示：
+### OpenOCD配置
 
-![open_debug](figures/open_debug.png)
+GD-LINK 基于Nuclei的OpenOCD 工具`OpenOCD-Nuclei`，请提前在SDK管理器下载好。OpenOCD的配置部分，使用默认生成的配置就行，无需更改
 
-这里使用 OpenOCD 作为 GDB Server，使用GCC工具链中的 GDB 工具作为 GDB Client。双击 GDB OpenOCD Debugging，新建一套 OpenOCD 的配置选项。
+![image-20220510184654023](figures/image-20220510184654023.png)
 
-Main 选项卡
+> - OpenOCD 和 GDB 与环境变量相关，不同电脑，不同的安装路径无影响
+> - 系统根目录下的 openocd_gd32vf103.cfg 不能删除，配置选项里用到，该文件主要配置GD-Link参数
+> - Commands 默认即可
 
-Main 选项卡配置界面
 
-![main_select](figures/main_select.png)
 
-选择当前工程 GD32VF103，并且选择当前型号的可执行文件，例如：GD32VF103xB\GD32VF103xB.elf。
+### 启动调试
 
-Debugger 选项卡
- Debugger 选项卡配置界面
+单击菜单栏里的`应用调试`按钮，即可启动OpenOCD下载和调试。 
 
-![debug_select](figures/debug_select.png)
+![image-20220510185740341](figures/image-20220510185740341.png)
 
-在 Debugger 选项卡中，确认红圈中的配置正确。
-其中，“Config options” 是为 OpenOCD 选择配置文件，需要根据当前使用的下载器选择不同的 cfg 文件。
+> GD-LINK 启动过程很耗时间，大概花费半分钟左右，请耐心等待！！！
 
-上述配置内容配置好后，点击应用调试。
+
+
 ### 运行结果
+
+控制台输出在UART0（GPIO 9/10）
 
 下载程序之后，连接串口(115200-N-8-1)，可以看到 RT-Thread 的输出信息：
 
 ```
  \ | /
 - RT -     Thread Operating System
- / | \     4.0.2 build Jul 24 2019
- 2006 - 2019 Copyright by rt-thread team
+ / | \     4.1.0 build May 10 2022 18:51:11
+ 2006 - 2022 Copyright by RT-Thread team
+msh >ps
+thread   pri  status      sp     stack size max used left tick  error
+-------- ---  ------- ---------- ----------  ------  ---------- ---
+tshell    20  running 0x00000140 0x00001000    16%   0x00000009 000
+tidle0    31  ready   0x000000a0 0x00000100    67%   0x00000011 000
+timer      4  suspend 0x000000c0 0x00000200    37%   0x00000009 000
 msh >
+
 ```
 
 ## 驱动支持情况
@@ -115,5 +99,5 @@ msh >
 ## 5. 联系人信息
 
 维护人：
-- [tyustli](https://github.com/tyustli)
+- [blta](https://github.com/blta)
 
